@@ -17,7 +17,8 @@ import NotAvailable from './components/NotAvailable';
  let router = createBrowserRouter([
   {
     path : '/',
-    element:<div><Nav visiblity={true}/><Home/></div>
+    element:<div><Nav visiblity={true}/><Home/></div>,
+    errorElement : <NotAvailable/>
 
   },
   {
