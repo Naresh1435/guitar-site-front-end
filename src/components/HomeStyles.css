@@ -1,0 +1,63 @@
+.color-con1 {
+    background-image: linear-gradient(326deg, #23233b, #1c1c33 50%, #23233b);
+}
+
+
+
+.color-con2{
+    background-color: #23233b;
+}
+
+.color-con3{
+    color: #1c1c33;
+}
+
+.border-color-con1{
+
+    border-color: #1c1c33;
+}
+
+.img-left{
+    border-radius: 2% 50% 50% 50% ;
+    position: absolute;
+}
+.img-right{
+    border-radius: 50% 2% 50% 50% ;
+}
+
+.adjust-img1-con1 {
+    top: -2rem;
+    right : 8rem
+}
+.adjust-img2-con1{
+    bottom: 1px;
+    right : -6rem;
+}
+.adjust-img3-con1{
+    top : -3rem;
+    right: 1rem;
+}
+
+.adjust-img4-con1{
+    top:-2.4rem;
+    left:-1rem
+}
+
+.adjust-img1-con2{
+    top:-3.5rem;
+    left:6rem
+}
+
+.adjust-img2-con2{
+    bottom: -2.8rem;
+    right : -4rem;
+}
+
+.adjust-img3-con2{
+    top:-2rem;
+}
+
+.adjust-img4-con2{
+    bottom: -1.5rem;
+    right:2rem;
+}

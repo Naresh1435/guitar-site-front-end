@@ -1,30 +1,62 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {Link} from "react-router-dom";
+import HomeStyles from "../HomeStyles.css"
 function SideBar(props){
     return(
-        <section>
-        <div class="container2 flex float-left">
-            <div class="container w-80 bg-gray-800 h-screen">
-                <div class="nan p-6 mb-5 h-12">
-                    <h1 class="text-white mx-12 font-alkalami text-xl">TEACHER</h1>
+        <div className="color-con2 h-screen w-44 ">
+        <div className="float-left">
+            <div className="w-20">
+                <div className="mb-3 h-8">
+                    <h1 className="text-white  mt-4 mx-4 font-alkalami text-lg text-center uppercase">{props.role}</h1>
                 </div>
-                <hr/>
-                <ul class="">
-                    <ListElement/>
-                </ul>
+                <hr className="w-44 bg-white "/>
+                    {props.role==="mentor"?<MentorSideBar/>:props.role==="student"?<StudentSideBar/>:<ParentSideBar/>}
             </div>
         </div>
-    </section>
+    </div>
     )
 }
 
-function ListElement(){
+function MentorSideBar(){
     return (
-        <li class="mx-16 mt-5 text-lg font-alkalami text-white ">
-            <i class=" fa-regular fa-message mr-1 "></i>
-        <Link to="chat">Chatbox</Link></li>
+        <ul className="">
+        <ListElement name='assigned'/>
+        <ListElement name='chat'/>
+        <ListElement name='tasks'/>
+        <ListElement name='profile'/>
+        </ul>
+    )
+}
+
+function StudentSideBar(){
+    return (
+        <ul className="">
+        <ListElement name='courses'/>
+        <ListElement name='chat'/>
+        <ListElement name='tasks'/>
+        <ListElement name='archives'/>
+        <ListElement name='profile'/>
+        </ul>
+    )
+}
+
+function ParentSideBar(){
+    return (
+        <ul>
+            <ListElement name='profile'/>
+        </ul>
+    )
+    
+}
+
+function ListElement(props){
+    return (
+        <li className="mt-10 mx-3 text-md capitalize font-alkalami text-white">
+           
+        <Link to={`${props.name}`}>{props.name}</Link></li>
     )
 }
 
 
-export default SideBar;
+export default SideBar; 

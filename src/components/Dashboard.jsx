@@ -1,34 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import {BrowserRouter, Link, Navigate, Route, Routes, useLoaderData} from 'react-router-dom';
-import Topnav from './dashboard/Topnav';
+import React, { useEffect, useState} from 'react';
+import {Route , useLoaderData} from 'react-router-dom';
+import Nav from './Nav';
 import SideBar from './dashboard/SideBar';
-import {DashboardDefault, DashboardNav} from './dashboard/DashboardMain';
 import $ from 'jquery';
+import Profile from './dashboard/Profile';
+import StudentDashboad from './dashboard/StudentDashboard';
+import MentorDashboard from './dashboard/MentorDashboard';
+import "./HomeStyles.css";
+import GroupDashboard from './dashboard/ParentDashboard';
 
 function Dashboard(props) {
-
-    const loadData = useLoaderData();
-    console.log(loadData);
-
+    const data = useLoaderData();
     return (
-        <div>
-        <Topnav/>
-        <SideBar/>
-        <Routes>
-        <Route path='/' element={<DashboardNav/>}/>
-        <Route path='programs' element={<section><DashboardNav display="1"/><DashboardDefault/></section>} />
-        <Route path='paid-courses' element={<section><DashboardNav display="2"/><DashboardDefault/></section>} />
-        <Route path='free-courses' element={<section><DashboardNav display="3"/><DashboardDefault/></section>} />
-        </Routes>
+        <section>
+        <Nav visibility={false}/>
+        <div className='flex'>
+            <div className='flex-initial h-screen color-con2'>
+                <SideBar role = {props.role}/>
+            </div>
+            <div className='flex-1 h-screen'>
+            {props.role==='student'?<StudentDashboad data={data.response} />:props.role==='mentor'?<MentorDashboard data={data.response}/>: <GroupDashboard/>}
+            </div>
         </div>
-    )
+        </section>
+    );
 }
-function loadResponse() { 
-    $.get('/api/verify',(data,err)=>{
-        return err ? false : data;
-    });
-}
-
-
-export {loadResponse};
 export default Dashboard;

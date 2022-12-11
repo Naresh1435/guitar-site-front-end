@@ -1,37 +1,70 @@
-import {Link} from "react-router-dom";
+import {Link, Outlet, useParams} from "react-router-dom";
+import CourseContainer from "./CourseContainer";
+import CoursePage from "./CoursePage";
 
 function BlueLine(){
     return(
-    <div className="bg-blue-300 h-1 w-35 mt-2 mx-9"></div>
+    <div className="bg-emerald-400 h-1 w-35 mt-2 mx-9"></div>
     );
 }
 
 function DashboardNav(props){
+    const params = useParams();
     return(<main>
-        <div className="container2 flex justify-center mt-10">
-            <h1 className="mr-20 font-bold text-2xl font-serif">My Creation</h1>
-                <div className="one"><Link className=" font-bold mx-10" to="/dashboard/programs">NANOPROGRAM</Link> 
-                {props.display ==="1"?<BlueLine/>:null}
-                </div>
-                <div className="two"><Link  className="mx-10 font-bold" to="/dashboard/paid-courses">PAID COURSES</Link>
-                {props.display ==="2"?<BlueLine/>:null}
-                </div>
-                <div className="three"><Link class="mx-10 font-bold" to="/dashboard/free-courses">FREE COURSES</Link>
-                {props.display ==="3"?<BlueLine/>:null}
+        <div className="flex w-full mt-10">
+            <Link to="../courses">
+            <h1 className="mx-5 font-bold text-xl">My Courses</h1>
+            </Link>
+            
+            <div className="box1 mx-auto justify-end">
+                <div className="flex">
+                    <div className="one box1 mx-auto"><Link className="mx-5    text-md font-bold" to="plus">PRO PLUS</Link> 
+                    {params.plan === "plus"?<BlueLine/>:null}
+                    </div>
+                    <div className="two mx-auto"><Link  className="mx-5  text-md font-bold" to="pro">PRO</Link>
+                    {params.plan ==="pro"?<BlueLine/>:null}
+                    </div>
+                    <div className="three mx-auto"><Link className=" mx-5 text-md font-bold" to="free">FREE COURSES</Link>
+                    {params.plan==="free"?<BlueLine/>:null}
+                    </div>  
                 </div>
                 
+            </div>       
         </div>
     </main>);
 }
 
-function DashboardDefault(){
+function DashboardDefault(props){
+    const params = useParams();
+    console.log(params);
+    console.log(props.data.length);
+
+    function NoCourses(){
+        return(
+            <div className="container3  mx-5 justify-center mt-8 bg-emerald-400 rounded-md  h-3/4 w-5/6 p-2   ">
+                <div className="mx-5 text-inherit">
+                    <p className=" font-semibold mt-9">You are not currently enrolled in any program</p>
+                    <h1 className=" mt-10 mb-10">Take The Next Step In Your Life</h1>
+                    <Link to="/explore"><button className="mb-10 color-con1 text-white px-4 py-2 rounded-md hover:bg-white hover:text-inherit">Explore Courses</button></Link>
+                </div>
+            </div>
+        )
+    }
+    function CourseMapper(){
+       const response =  props.data.filter(element => element.course_plan==params.plan);
+        console.log("Res",response);
+        
+        return(
+           params.plan=== undefined?props.data.map(CourseContainer):response.length===0?<NoCourses/>:response.map(CourseContainer) 
+        )
+    }
     return(
-        <div className="container3  m-auto justify-center mt-8 bg-cyan-500  h-3/4 w-3/4">
-            <p className=" mt-9 mx-16">You Are Not Currently Enrolled In Any Program</p>
-            <h1 className=" mt-10 mb-10 mx-20">Take The Next Step In Your Life</h1>
-            <button className="bg-white mb-10 mx-20 "><Link to="/explore">EXPLORE PROGRAMS</Link></button>
-        </div>
+        props.data.length === 0 ? <NoCourses/> : <CourseMapper/> 
+
+        
     );
 }
+
+
 
 export {DashboardDefault, DashboardNav};
