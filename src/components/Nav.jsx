@@ -7,12 +7,12 @@ import { useEffect } from "react";
 import $ from 'jquery';
 
 function Nav (props) {
-const apiUser = fetch('/api/verify');
-const [validateUser,updateUser] = useState(apiUser);
-const [obj,updateObj] = useState({auth : false, img : "",role:""});
+const [obj,updateObj] = useState({auth : false, imgURL : "",role:""});
 useEffect(()=>{
-    validateUser.then((data)=>{
-        data.json().then(data2=>updateObj((objdata)=>objdata = data2));
+    $.get('/api/verify',(data,err)=>{
+        if(data.auth && err==='success') {
+            updateObj(data);
+        }
     });
     
 },[]);
@@ -20,7 +20,7 @@ useEffect(()=>{
 
 
 return(
-<nav className="nav bg-gray-900 relative flex justify-center p-2 fixed" id="nav-top">
+<nav className="nav bg-gray-900 w-full relative flex justify-center z-30 p-2 fixed" id="nav-top">
     <div className="box1 mr-auto justify-start">
         <Link to='/'>
         <img src={Logo} className="ml-4 mt-1 nav h-16 w-16" alt="img" />
@@ -72,7 +72,7 @@ return (
     <div className="absolute bg-gray-200 right-8 rounded-md my-2 py-4 px-4 hidden z-10" id="nav-toggle">
         <ul className="text-lg">
             <li className="my-1 hover:scale-105">
-                <Link to={`/dashboard/${props.role}/courses`}>
+                <Link to={`/dashboard/${props.role}/profile`}>
                     <span className="hover:text-emerald-400">Dashboard</span>
                 </Link>
             </li>

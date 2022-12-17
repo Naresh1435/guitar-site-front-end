@@ -36,8 +36,6 @@ function DashboardNav(props){
 
 function DashboardDefault(props){
     const params = useParams();
-    console.log(params);
-    console.log(props.data.length);
 
     function NoCourses(){
         return(
@@ -51,9 +49,7 @@ function DashboardDefault(props){
         )
     }
     function CourseMapper(){
-       const response =  props.data.filter(element => element.course_plan==params.plan);
-        console.log("Res",response);
-        
+       const response =  props.data.filter(element => element.course.subscription_plan===params.plan);
         return(
            params.plan=== undefined?props.data.map(CourseContainer):response.length===0?<NoCourses/>:response.map(CourseContainer) 
         )

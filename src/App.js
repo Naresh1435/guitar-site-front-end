@@ -45,7 +45,7 @@ import NotAvailable from './components/NotAvailable';
         element: <Dashboard role='mentor'/>,
         loader : loadGetResponseMentor, 
       },{
-        path :'parent/*',
+        path :'group/*',
         element : <Dashboard role="group"/>,
         loader : loadGetResponseParent,
       },{

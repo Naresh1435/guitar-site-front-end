@@ -25,9 +25,11 @@ function handleClick(){
 setNavToggle(navToggle => !navToggle);
 }
 function Module_list(props){
+    console.log('Module ' + Module._id);
+    console.log('Module 2 ' +props._id);
 return(
-<div key={props._id} id={props._id} className='py-1 px-2 text-white hover:cursor-pointer' onClick={PlaybackId_Mapper}>
-    <FontAwesomeIcon icon='fa-solid fa-circle' />  {props.title}
+<div key={props._id} id={props._id} className={`py-1 px-2 text-white hover:cursor-pointer ${Module._id===props._id? 'bg-emerald-400 rounded-lg' :null}`} onClick={PlaybackId_Mapper}>
+ {props.title}
 </div>
 )
 }

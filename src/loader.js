@@ -15,7 +15,7 @@ async function loadGetResponseStudent() {
     return await get;
 }
 async function loadGetResponseParent(){
-    const get = await fetch('/api/get/parent');
+    const get = await fetch('/api/get/group');
     return (await get).json();
 }
 

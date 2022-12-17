@@ -35,14 +35,14 @@ function StudentChat(props){
     }
 
     return (
-        <section className="flex-1">
+        <section className="flex-1 mt-2">
             <div className="">
-                <div className="bg-emerald-400 h-16 p-2">
-                    <h1 className="text-xl text-white font-semibold">Mentor</h1>
+                <div className="bg-emerald-400  p-10">
+                    <h1 className="text-3xl text-white font-semibold">Mentor</h1>
                 </div>
             </div>
-            <div className="flex flex-col h-3/5" style={{'overflowX':'visible','overflowY':'scroll'}} >
-            {msgState.map(messageMap)}    
+            <div className="flex flex-col h-96" style={{'overflowX':'visible','overflowY':'scroll'}} >
+            {msgState?.map(messageMap)}    
             </div>    
             <div className="my-3 flex  justify-center">
                 <form className="bg-gray-200 rounded flex align-center " onSubmit={sendMessage} >
