@@ -1,7 +1,7 @@
 {
   "name": "my-webpack-project",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "proxy": "https://guitar-site-87h3i.ondigitalocean.app",
   "main": "index.js",
   "dependencies": {
