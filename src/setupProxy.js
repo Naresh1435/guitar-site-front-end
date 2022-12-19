@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'http://localhost:3001',
+      target: 'https://guitar-site-87h3i.ondigitalocean.app',
       changeOrigin: true,
     })
   );

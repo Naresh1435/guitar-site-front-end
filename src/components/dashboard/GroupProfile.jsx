@@ -127,7 +127,7 @@ function Profile(props){
                     <div className="w-1/2 p-2 text-slate-8002">
                         <span>Plan Status : </span>
                     </div>
-                    <div className="w-1/2">
+                    <div className="w-1/2 text-sm ">
                     {
                         props?.profile_data?.user_data?.plan_initial_status.user_status === false && props?.profile_data?.user_data?.plan_initial_status.admin_status === false ? 
                             <span className="p-2 text-white text-lg rounded-lg bg-gray-200">Not assigned</span> 

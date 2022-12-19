@@ -21,9 +21,7 @@ function SideBar(props){
 function MentorSideBar(){
     return (
         <ul className="">
-        <ListElement name='assigned'/>
         <ListElement name='chat'/>
-        <ListElement name='tasks'/>
         <ListElement name='profile'/>
         </ul>
     )

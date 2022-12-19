@@ -3,7 +3,6 @@ import {Route , useLoaderData} from 'react-router-dom';
 import Nav from './Nav';
 import SideBar from './dashboard/SideBar';
 import $ from 'jquery';
-import Profile from './dashboard/Profile';
 import StudentDashboad from './dashboard/StudentDashboard';
 import MentorDashboard from './dashboard/MentorDashboard';
 import "./HomeStyles.css";
@@ -21,7 +20,7 @@ function Dashboard(props) {
                 <SideBar role = {props.role}/>
             </div>
             <div className='flex-1 mt-16 ml-44 h-screen justify-self-center'>
-            {props.role==='student'?<StudentDashboad data={data.response} />:props.role==='mentor'?<MentorDashboard data={data.response}/>: <GroupDashboard/>}
+            {props.role==='student'?<StudentDashboad data={data.response} />:props.role==='mentor'?<MentorDashboard data={data.response} img_url = {data.imgURL} />: <GroupDashboard/>}
             </div>
         </div>
         </section>

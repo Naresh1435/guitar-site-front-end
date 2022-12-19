@@ -1,4 +1,5 @@
 function AccessDenied(props){
+    console.log(props.obj);
     return (
     <section className="jumbotron flex flex-col justify-center">
         {props.access?<HoldBack/>:<NoAccess/>}

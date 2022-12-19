@@ -2,7 +2,7 @@
   "name": "guitar-final-site",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://guitar-site-87h3i.ondigitalocean.app",
   "main": "index.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
