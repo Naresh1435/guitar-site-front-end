@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://guitar-site-87h3i.ondigitalocean.app',
+      target: 'https://guitar-front-end-h43oo.ondigitalocean.app',
       changeOrigin: true,
     })
   );
