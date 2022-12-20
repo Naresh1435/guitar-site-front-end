@@ -30,7 +30,7 @@ const config = {
     },
     historyApiFallback: true,
     open: true,
-    host: "localhost",
+    host: "guitar-front-end-h43oo.ondigitalocean.app",
     port : 9000,
     proxy: {
         '/api': 'https://guitar-site-87h3i.ondigitalocean.app',
