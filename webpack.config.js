@@ -31,7 +31,12 @@ const config = {
     historyApiFallback: true,
     open: true,
     proxy: {
-        '/api': 'https://guitar-site-87h3i.ondigitalocean.app',
+        '/api': {
+          target : 'https://guitar-site-87h3i.ondigitalocean.app',
+          secure: false, 
+          changeOrigin: true,
+
+        },
     },
     hot : true,
     // host : '0.0.0.0',
