@@ -29,12 +29,11 @@ const config = {
         directory: path.join(__dirname, 'dist'),
     },
     historyApiFallback: true,
+    disableHostCheck: true,
     open: true,
     proxy: {
         '/api': 'http://localhost:3001',
     },
-    host : process.env.HOST,
-    port : process.env.PORT,
     hot : true,
     // host : '0.0.0.0',
     magicHtml: true,
