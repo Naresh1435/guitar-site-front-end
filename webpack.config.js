@@ -33,6 +33,7 @@ const config = {
     proxy: {
         '/api': 'https://guitar-site-87h3i.ondigitalocean.app',
     },
+    host : process.env.HOST,
     hot : true,
     magicHtml: true,
     allowedHosts: [
@@ -52,7 +53,8 @@ const config = {
     }),
     new webpack.ProvidePlugin({
       process: 'process/browser',
-    })
+    }),
+    
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
