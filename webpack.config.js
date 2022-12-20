@@ -36,7 +36,7 @@ const config = {
     hot : true,
     magicHtml: true,
     allowedHosts: [
-        'https://guitar-site-front-1gygp5kit-naresh-c-dev.vercel.app/',
+        'guitar-site-front-1gygp5kit-naresh-c-dev.vercel.app',
         'https://guitar-front-end-h43oo.ondigitalocean.app',
         'localhost'
       ],
