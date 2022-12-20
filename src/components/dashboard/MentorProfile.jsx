@@ -1,3 +1,4 @@
+import React from "react";
 function MentorProfile(props){
     console.log(props);
     return(

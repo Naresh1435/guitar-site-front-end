@@ -1,3 +1,4 @@
+import React from "react";
 import Nav from "./Nav";
 import HomeStyles from './HomeStyles.css'
 import { Link } from "react-router-dom";

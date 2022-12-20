@@ -29,19 +29,14 @@ const config = {
         directory: path.join(__dirname, 'dist'),
     },
     historyApiFallback: true,
-    disableHostCheck: true,
     open: true,
     proxy: {
-        '/api': 'http://localhost:3001',
+        '/api': 'https://guitar-site-87h3i.ondigitalocean.app',
     },
     hot : true,
     // host : '0.0.0.0',
     magicHtml: true,
-    allowedHosts: [
-        'guitar-site-front-1gygp5kit-naresh-c-dev.vercel.app',
-        'https://guitar-front-end-h43oo.ondigitalocean.app',
-        'localhost'
-      ],
+    allowedHosts:'all',
   },
   devtool:'inline-source-map',
   plugins: [

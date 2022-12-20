@@ -1,5 +1,5 @@
 import { Navigate, useLoaderData } from "react-router-dom";
-
+import React from "react";
 
 function ProtectedRoute({children}) {
     const response = useLoaderData();

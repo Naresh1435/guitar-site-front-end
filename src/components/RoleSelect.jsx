@@ -1,3 +1,4 @@
+import React from "react";
 import student from "../img/student.png";
 import Webinar from "../img/Webinar-pana.png";
 import Parents from "../img/Parents-amico.png";

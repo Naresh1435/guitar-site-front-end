@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useLoaderData} from "react-router-dom";
 import $ from 'jquery';
@@ -31,7 +32,7 @@ function StudentChat(props){
     function messageMap(msgMap){
         console.log(msgMap)
         return (
-                msgMap.flag ?<SendContainer text={msgMap.text} time={msgMap.created_at} id={msgMap._id} />:<RecieveContainer text={msgMap.text} id={msgMap._id} />
+                msgMap.flag ?<SendContainer text={msgMap.text} time={msgMap.created_at} id={msgMap._id} />:<RecieveContainer text={msgMap.text} time={msgMap.created_at} id={msgMap._id} />
         );
         
     }
@@ -43,7 +44,7 @@ function StudentChat(props){
                     <h1 className="text-3xl text-white font-semibold">Mentor</h1>
                 </div>
             </div>
-            <div className="flex flex-col-reverse bg-slate-100 h-96" style={{'overflowX':'visible','overflowY':'scroll'}} >
+            <div className="flex flex-col-reverse bg-slate-100 h-screen" style={{'overflowX':'visible','overflowY':'scroll'}} >
             {msgState?.slice(0).reverse().map(messageMap)}    
             </div>    
             <div className="py-3 flex bg-slate-100  justify-center">

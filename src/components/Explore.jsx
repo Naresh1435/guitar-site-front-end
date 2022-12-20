@@ -1,11 +1,12 @@
+import React from "react";
 import { Link, Navigate, useLoaderData } from "react-router-dom";
-import {useState, useEffect} from 'react';
+import {useState, useEffect} from "react";
 import girl from '../img/girl.jpg';
 import { Footer } from "./Footer";
 import { Loading } from "./dashboard/StudentProfile";
 import $ from 'jquery';
 import {TailSpin} from 'react-loader-spinner';
-import React from "react";
+
 
 
 function Explore() {

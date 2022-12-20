@@ -1,3 +1,4 @@
+import React from "react";
 import { useState,useEffect } from "react";
 import $ from 'jquery';
 import { InfinitySpin } from  'react-loader-spinner'

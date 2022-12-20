@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import AccessDenied from "../AccessDenied";
 import { Loading } from "./StudentProfile";

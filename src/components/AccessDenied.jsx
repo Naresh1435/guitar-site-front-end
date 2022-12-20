@@ -1,3 +1,4 @@
+import React from "react";
 function AccessDenied(props){
     console.log(props.obj);
     return (

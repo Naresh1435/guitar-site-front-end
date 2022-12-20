@@ -1,3 +1,4 @@
+import React from "react";
 import {Link, Outlet, useParams} from "react-router-dom";
 import CourseContainer from "./CourseContainer";
 import CoursePage from "./CoursePage";

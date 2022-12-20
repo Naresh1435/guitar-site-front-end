@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLoaderData} from "react-router-dom";
 import $ from 'jquery';
 import { useEffect } from "react";
+import React from "react";
 
 
 function SendContainer(props){
