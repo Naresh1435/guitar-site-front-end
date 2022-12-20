@@ -34,7 +34,9 @@ const config = {
         '/api': 'https://guitar-site-87h3i.ondigitalocean.app',
     },
     host : process.env.HOST,
+    port : process.env.PROT,
     hot : true,
+    host : '0.0.0.0',
     magicHtml: true,
     allowedHosts: [
         'guitar-site-front-1gygp5kit-naresh-c-dev.vercel.app',
