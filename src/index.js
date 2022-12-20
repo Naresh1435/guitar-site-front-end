@@ -13,3 +13,5 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode><RouterProvider router={App.props.router}/></React.StrictMode>
 );
+// root.render("<h1>Hello</h1>");
+

@@ -1,6 +1,7 @@
 import React from 'react';
-import Home from '../src/components/Home';
-import Nav from '../src/components/Nav';
+import path from 'path';
+import Home from './components/Home';
+import Nav from './components/Nav';
 import Dashboard from '../src/components/Dashboard';
 import Pricing from './components/Pricing';
 import {createBrowserRouter, Link, Route, Navigate, useParams, RouterProvider, Router} from 'react-router-dom';
