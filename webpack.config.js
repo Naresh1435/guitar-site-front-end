@@ -31,12 +31,12 @@ const config = {
     historyApiFallback: true,
     open: true,
     proxy: {
-        '/api': 'https://guitar-site-87h3i.ondigitalocean.app',
+        '/api': 'http://localhost:3001',
     },
     host : process.env.HOST,
-    port : process.env.PROT,
+    port : process.env.PORT,
     hot : true,
-    host : '0.0.0.0',
+    // host : '0.0.0.0',
     magicHtml: true,
     allowedHosts: [
         'guitar-site-front-1gygp5kit-naresh-c-dev.vercel.app',
@@ -44,7 +44,7 @@ const config = {
         'localhost'
       ],
   },
-  
+  devtool:'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname,"public/index.html"),
