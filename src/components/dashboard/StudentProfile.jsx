@@ -12,7 +12,7 @@ function StudentProfile (){
         updatePos(e.target.innerText);
     }
     useEffect(()=>{
-        $.get('/api/user/profile?role=student',(data,err)=>{
+        $.get('app/api/user/profile?role=student',(data,err)=>{
         if(err==='success'){
             console.log(data);
             updateProfileData(data);    

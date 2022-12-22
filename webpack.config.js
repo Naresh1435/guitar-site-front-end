@@ -31,10 +31,10 @@ const config = {
     historyApiFallback: true,
     open: true,
     proxy: {
-        '/api': {
+        '/app/api': {
           target : 'https://guitar-site-87h3i.ondigitalocean.app',
           secure: false, 
-          changeOrigin: true,
+          changeOrigin: false,
 
         },
     },

@@ -11,7 +11,7 @@ function ArchivePage (){
     const [response,updateResponse] = useState();
     const [access, updateAccess] = useState(false);
     useEffect(()=>{
-        $.get('/api/archives?id='+params.archiveID,(data,res)=>{
+        $.get('app/api/archives?id='+params.archiveID,(data,res)=>{
             if(res==='success' && data.res) {
                 updateResponse(true);
                 updateAccess(data.access);

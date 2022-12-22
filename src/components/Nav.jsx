@@ -9,7 +9,7 @@ import $ from 'jquery';
 function Nav (props) {
 const [obj,updateObj] = useState({auth : false, imgURL : "",role:""});
 useEffect(()=>{
-    $.get('/api/verify',(data,err)=>{
+    $.get('app/api/verify',(data,err)=>{
         if(data.auth && err==='success') {
             updateObj(data);
         }

@@ -12,7 +12,7 @@ function Pricing() {
     const [subscribed_plan_status, updatePlanStatus] = useState(false);
     const [Response,updateResponse] = useState(false);
     useEffect(()=>{
-        $.getJSON('/api/verify',(data,err)=>{
+        $.getJSON('app/api/verify',(data,err)=>{
             if(err==='success'){
                 if(data?.role === 'student' && data.auth){
                     $.getJSON('/api/get/student', (studentData, res)=>{
@@ -47,10 +47,10 @@ function Pricing() {
                     window.location.assign('/select-role');
                 } else if (e.target.id ==='pro' ){
 
-                    window.location.assign('/api/payment?plan=plan_KbHl03IPQIEFKv&type=pro&role=student&status=create')
+                    window.location.assign('app/api/payment?plan=plan_KbHl03IPQIEFKv&type=pro&role=student&status=create')
 
                 } else if(e.target.id ==='plus') {
-                    window.location.assign('/api/payment/?plan=plan_KfUTdm9pE8pP94&type=plus&role=student&status=create')
+                    window.location.assign('app/api/payment/?plan=plan_KfUTdm9pE8pP94&type=plus&role=student&status=create')
                 }
             } else {
                 alert('User Account type is not eligible for subscription')

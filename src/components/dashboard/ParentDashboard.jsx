@@ -5,7 +5,7 @@ import GroupProfile from './GroupProfile'
 function GroupDashboard(){
     return (
         <Routes>
-            <Route path='profile' element=<GroupProfile/> />
+            <Route path='profile' element={<GroupProfile/>} />
         </Routes>
     )
 }

@@ -7,7 +7,7 @@ function GroupProfile(){
     const [currentNav,updateNav] = useState('Profile');   
     const [ProfileData,updateProfileData] = useState();
     useEffect(()=>{
-        $.get('/api/user/profile?role=group',(data,err)=>{
+        $.get('app/api/user/profile?role=group',(data,err)=>{
             updateProfileData(data);
             console.log(data);
         });
