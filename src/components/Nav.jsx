@@ -22,7 +22,7 @@ useEffect(()=>{
 return(
 <nav className="nav bg-gray-900 w-full relative flex justify-center z-30 p-2 fixed" id="nav-top">
     <div className="box1 mr-auto justify-start">
-        <Link to='/'>
+        <Link to='/react'>
         <img src={Logo} className="ml-4 mt-1 nav h-16 w-16" alt="img" />
         </Link>
         

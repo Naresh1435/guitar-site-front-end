@@ -24,13 +24,16 @@ import NotAvailable from './components/NotAvailable';
   },
   {
     path:'/pricing',
-    element :<div><Nav visiblity={true} /><Pricing/></div>
+    element :<div><Nav visiblity={true} /><Pricing/></div>,
+    errorElement : <NotAvailable/>
   },{
     path:'/about',
-    element:<div><Nav visiblity={true}/><About/></div>
+    element:<div><Nav visiblity={true}/><About/></div>,
+    errorElement : <NotAvailable/>
   },{
     path:'/contact',
-    element:<div><Nav visiblity={true} /><Contact/></div>
+    element:<div><Nav visiblity={true} /><Contact/></div>,
+    errorElement : <NotAvailable/>
   },{
     path:'/dashboard',
     element:<DashboardRoot/>,
@@ -60,14 +63,16 @@ import NotAvailable from './components/NotAvailable';
     path:'/explore',
     element: <div><Nav visiblity={true} /><Explore/></div>,
     loader:loadCourses,
+    errorElement : <NotAvailable/>,
      
   },{
-    path :'/:courseID',
+    path :'explore/:courseID',
     element : <CourseDescription/>,
     loader : loadGetCourse
   }, {
     path :'/select-role',
-    element : <RoleSelect/>
+    element : <RoleSelect/>,
+    errorElement : <NotAvailable/>
   }
 ]);
 
