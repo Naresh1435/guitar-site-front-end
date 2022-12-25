@@ -23,16 +23,16 @@ import NotAvailable from './components/NotAvailable';
 
   },
   {
-    path:'react/pricing',
+    path:'/pricing',
     element :<div><Nav visiblity={true} /><Pricing/></div>
   },{
-    path:'/react/about',
+    path:'/about',
     element:<div><Nav visiblity={true}/><About/></div>
   },{
-    path:'/react/contact',
+    path:'/contact',
     element:<div><Nav visiblity={true} /><Contact/></div>
   },{
-    path:'/react/dashboard',
+    path:'/dashboard',
     element:<DashboardRoot/>,
     loader : loadResponse,
     children:[
@@ -57,16 +57,16 @@ import NotAvailable from './components/NotAvailable';
     ]
   },
   {
-    path:'react/explore',
+    path:'/explore',
     element: <div><Nav visiblity={true} /><Explore/></div>,
     loader:loadCourses,
      
   },{
-    path :'explore/:courseID',
+    path :'/:courseID',
     element : <CourseDescription/>,
     loader : loadGetCourse
   }, {
-    path :'react/select-role',
+    path :'/select-role',
     element : <RoleSelect/>
   }
 ]);
