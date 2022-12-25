@@ -37,7 +37,7 @@ function Explore() {
                     console.log(data);
                     if(err==='success'){
                         if(data.res)
-                            window.location.href='/dashboard/student/courses';
+                           <Navigate to='/dashboard/student/courses' replace/>
                         else 
                             alert('You cannot enroll into this program');
                     } else {
@@ -52,7 +52,7 @@ function Explore() {
                 event.target.children[0].classList.add('hidden');
             }
         } else {
-            window.location.href='/select-role';
+            <Navigate to='/select-role' replace/>
         }
         
     }

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {Link} from 'react-router-dom';
 import "../HomeStyles.css";
 function CourseContainer(props){
-    function CourseCards(props) {
+    function CourseCards() {
         return(
             <div className="mx-5 h-40 w-3/4 mt-20 justify-center rounded-md bg-slate-200 shadow-2xl relative">
                 <div className="container4 left-10 top-7 absolute">
