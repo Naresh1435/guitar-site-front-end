@@ -37,7 +37,7 @@ import NotAvailable from './components/NotAvailable';
     loader : loadResponse,
     children:[
       {
-        path:'/student/*',
+        path:'student/*',
         element:<Dashboard role='student'/>,
         loader : loadGetResponseStudent,
       },
