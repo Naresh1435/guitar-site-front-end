@@ -12,7 +12,7 @@ function StudentArchives(){
     const [access,updateAccess] = useState(false);
     const [data, updateData] = useState('');
     useEffect(()=>{
-        $.get('app/api/archives',(data,res)=>{
+        $.get('/app/api/archives',(data,res)=>{
             if(res==='success' && data.res){
                 updateResponse(true);
                 updateAccess(data.access);

@@ -12,7 +12,7 @@ function Pricing() {
     const [subscribed_plan_status, updatePlanStatus] = useState(false);
     const [Response,updateResponse] = useState(false);
     useEffect(()=>{
-        $.getJSON('app/api/verify',(data,err)=>{
+        $.getJSON('/app/api/verify',(data,err)=>{
             if(err==='success'){
                 if(data?.role === 'student' && data.auth){
                     $.getJSON('/api/get/student', (studentData, res)=>{
@@ -44,19 +44,19 @@ function Pricing() {
         if(Auth === true){
              if(Role === 'student'){
                 if(e.target.id ==='free'){
-                    window.location.assign('/select-role');
+                    window.location.assign('/react/select-role');
                 } else if (e.target.id ==='pro' ){
 
-                    window.location.assign('app/api/payment?plan=plan_KbHl03IPQIEFKv&type=pro&role=student&status=create')
+                    window.location.assign('/app/api/payment?plan=plan_KbHl03IPQIEFKv&type=pro&role=student&status=create')
 
                 } else if(e.target.id ==='plus') {
-                    window.location.assign('app/api/payment/?plan=plan_KfUTdm9pE8pP94&type=plus&role=student&status=create')
+                    window.location.assign('/app/api/payment/?plan=plan_KfUTdm9pE8pP94&type=plus&role=student&status=create')
                 }
             } else {
                 alert('User Account type is not eligible for subscription')
             }
         } else {
-            window.location.assign('/select-role');
+            window.location.assign('/react/select-role');
         }
         $('#infinity-spin').addClass('hidden');
         //  /api/payment?plan=plan_KbHl03IPQIEFKv&type=pro&role=student&status=create

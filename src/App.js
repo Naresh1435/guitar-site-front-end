@@ -17,27 +17,27 @@ import NotAvailable from './components/NotAvailable';
 
  let router = createBrowserRouter([
   {
-    path : '/',
+    path : '/react',
     element:<div><Nav visiblity={true}/><Home/></div>,
     errorElement : <NotAvailable/>
 
   },
   {
-    path:'pricing',
+    path:'react/pricing',
     element :<div><Nav visiblity={true} /><Pricing/></div>
   },{
-    path:'about',
+    path:'/react/about',
     element:<div><Nav visiblity={true}/><About/></div>
   },{
-    path:'contact',
+    path:'/react/contact',
     element:<div><Nav visiblity={true} /><Contact/></div>
   },{
-    path:'/dashboard',
+    path:'/react/dashboard',
     element:<DashboardRoot/>,
     loader : loadResponse,
     children:[
       {
-        path:'student/*',
+        path:'/student/*',
         element:<Dashboard role='student'/>,
         loader : loadGetResponseStudent,
       },
@@ -57,7 +57,7 @@ import NotAvailable from './components/NotAvailable';
     ]
   },
   {
-    path:'/explore',
+    path:'react/explore',
     element: <div><Nav visiblity={true} /><Explore/></div>,
     loader:loadCourses,
      
@@ -66,7 +66,7 @@ import NotAvailable from './components/NotAvailable';
     element : <CourseDescription/>,
     loader : loadGetCourse
   }, {
-    path :'/select-role',
+    path :'react/select-role',
     element : <RoleSelect/>
   }
 ]);

@@ -19,7 +19,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename : '[name].bundle.js',
-    publicPath :'/react'
+    publicPath :'/react/'
   },
   resolve : {
     roots :[path.resolve(__dirname,'src/components',path.resolve(__dirname,'src'))],
@@ -33,7 +33,7 @@ const config = {
     open: true,
     proxy: {
         '/app/api/': {
-          target : 'https://server-q9nh3.ondigitalocean.app',
+          target : 'https://guitar-site-87h3i.ondigitalocean.app',
           secure: false, 
           changeOrigin: true,
 

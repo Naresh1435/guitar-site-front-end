@@ -17,7 +17,7 @@ function MentorChat(props){
     //api/message/student/639f39e3b4c7c394df0b1ccb/mentor/639f1ec9b509a266a5e98de2
     useEffect(()=>{
         if(studentID != undefined){
-            const chatURL = 'app/api/message/student/'+studentID+'/mentor/'+props?.data?._id;
+            const chatURL = '/app/api/message/student/'+studentID+'/mentor/'+props?.data?._id;
             console.log(chatURL);
             $.get(chatURL,(data,err)=>{
                 setMsgState((prev)=>prev = data.chats);
@@ -35,7 +35,7 @@ function MentorChat(props){
                 message : event.target.message.value,
                 flag : false
             }
-            const chatURL = 'app/api/message/student/'+studentID+'/mentor/'+props?.data?._id;
+            const chatURL = '/app/api/message/student/'+studentID+'/mentor/'+props?.data?._id;
             $.post(chatURL,data,(err)=>{
                 if(err=='OK'){
                     event.target.message.value="";

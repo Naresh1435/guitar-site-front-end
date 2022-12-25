@@ -33,7 +33,7 @@ function PageError(props){
                 <div className="p-4">
                 <p className="text-5xl text-red-400 font-semibold underline decoration-white relative" id="error-title" >ERROR!</p>
                 <p className="text-lg mt-4 text-gray-500" id= "error-des">{props.message?props.message : 'Oops! Something went wrong, Try again later.'}</p>
-                <Link to='/'><button className="bg-emerald-400 py-2 px-4 rounded-md mt-2 font-bold hover:scale-105 hover:text-white">TAKE HOME</button></Link>
+                <Link to='/react'><button className="bg-emerald-400 py-2 px-4 rounded-md mt-2 font-bold hover:scale-105 hover:text-white">TAKE HOME</button></Link>
                 </div>
                 
             </div>

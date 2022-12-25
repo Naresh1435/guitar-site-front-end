@@ -15,7 +15,7 @@ function Explore() {
     const loaderData = useLoaderData();
     useEffect(()=>{
         updateAuth(loaderData.auth);
-        $.get('app/api/verify',(data,res)=>{
+        $.get('/app/api/verify',(data,res)=>{
             if(res === 'success' && data.res){
                 if(data.auth)
                     updateRole(data.role);
@@ -33,7 +33,7 @@ function Explore() {
         if (Auth){
             if(Role==='student'){
                 console.log('here');
-                $.post('app/api/enrollcourse',{course_id : event.target.id},(data,err)=>{
+                $.post('/app/api/enrollcourse',{course_id : event.target.id},(data,err)=>{
                     console.log(data);
                     if(err==='success'){
                         if(data.res)

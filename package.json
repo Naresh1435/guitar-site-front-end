@@ -2,7 +2,7 @@
   "name": "my-webpack-project",
   "version": "1.0.0",
   "private": false,
-  "proxy": "http://guitar-site-87h3i.ondigitalocean.app",
+  "proxy": "https://server-q9nh3.ondigitalocean.app",
   "main": "index.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
