@@ -19,6 +19,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename : '[name].bundle.js',
+    publicPath :'/react/'
   },
   resolve : {
     roots :[path.resolve(__dirname,'src/components',path.resolve(__dirname,'src'))],
