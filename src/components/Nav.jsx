@@ -45,16 +45,16 @@ function NavigationContainer(){
     <ul className="flex">
 
         <li className="text-center  p-4 text-white text-lg">
-          <Link to="/explore"> <p className="hover:text-emerald-400 hover:no-underline">Explore</p></Link>
+          <Link to="/react/explore"> <p className="hover:text-emerald-400 hover:no-underline">Explore</p></Link>
         </li>
         <li className="nav-item text-center p-4  text-white text-lg">
-            <Link to="/pricing"><p className="hover:text-emerald-400 hover:no-underline">Pricing</p></Link>
+            <Link to="/react/pricing"><p className="hover:text-emerald-400 hover:no-underline">Pricing</p></Link>
         </li>
         <li className="nav-item text-center   p-4   text-white text-lg">
-            <Link to="/about"><p className="hover:text-emerald-400  hover:no-underline">About</p></Link>
+            <Link to="/react/about"><p className="hover:text-emerald-400  hover:no-underline">About</p></Link>
         </li>
         <li className="nav-item text-center hover:text-emerald-400  p-4   text-white text-lg">
-            <Link to="/contact"><p className="hover:text-emerald-400 hover:no-underline">Contact</p></Link>
+            <Link to="/react/contact"><p className="hover:text-emerald-400 hover:no-underline">Contact</p></Link>
         </li>
     </ul>
     </div>
@@ -72,12 +72,12 @@ return (
     <div className="absolute bg-gray-200 right-8 rounded-md my-2 py-4 px-4 hidden z-10" id="nav-toggle">
         <ul className="text-lg">
             <li className="my-1 hover:scale-105">
-                <Link to={`/dashboard/${props.role}/profile`}>
+                <Link to={`/react/dashboard/${props.role}/profile`}>
                     <span className="hover:text-emerald-400">Dashboard</span>
                 </Link>
             </li>
             <li className="my-1 hover:scale-105 ">
-                <a href="/api/logout">
+                <a href="/app/api/logout">
                     <span className="hover:text-emerald-400 hover:no-underline">Logout</span>
                 </a>
             </li>
@@ -92,7 +92,7 @@ return (
 function RegisterButton() {
     return (
 <li className="text-center hover:text-blue-700 mx-2 mt-2 p-2  text-black">
-    <Link to='/select-role'><button
+    <Link to='/react/select-role'><button
         className="bg-emerald-400 hover:bg-black text-white text-lg p-2 rounded">Join Us</button></Link>
 </li>)
 }

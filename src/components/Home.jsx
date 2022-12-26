@@ -127,7 +127,7 @@ return(
                     Doloremque error quaerat inventore?</p>
 
                 <div className="mt-6">
-                    <button className="p-4 bg-emerald-300 text-white hover:bg-black ">Contact Us Now</button>
+                    <button className="p-4 bg-emerald-400 text-white rounded-md  hover:bg-black ">Contact Us Now</button>
                 </div>
             </div>
 
@@ -149,7 +149,7 @@ return(
         nostrum incidunt, perferendis sapiente mollitia aperiam quaerat tenetur provident quasi itaque totam! Ex, sit
         id! Dolorum ad enim omnis consectetur unde?</p>
     <div className="flex justify-center mt-6">
-        <button className="p-4 bg-emerald-400 text-white font-black hover:bg-black ">View All Workshops</button>
+        <button className="p-4 bg-emerald-400 text-white rounded-md font-black hover:bg-black ">View All Workshops</button>
     </div>
 </div>
 )
