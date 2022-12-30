@@ -41,7 +41,7 @@ return (
             <h2 className="text-md  text-white mt-4 p-2"> A deep-dive on the Instagram algorythm, hashtags, content
                 strategy, and branding.</h2>
 
-            <Link to='/select-role'><button
+            <Link to='/react/select-role'><button
                 className="bg-emerald-400 hover:bg-black text-slate-900 font-medium mt-10 p-2  text-lg rounded hover:text-white">Get
                 your couse now</button></Link>
             <Socials />
@@ -175,7 +175,6 @@ return(
 
     </div>
 
-
 </div>
 
 )
@@ -196,7 +195,7 @@ function CourseCards(props){
                 <p className="text-sm font-light capitalize  ">{props.course_features}</p>
             </div>
             <div className="flex flex-row mb-2">
-                <Link className="flex-1 mx-1" to={`${props._id}`}>
+                <Link className="flex-1 mx-1" to={''} >
                 <button
                     className="w-100 p-2 btn-dark font-semibold hover:bg-white hover:border-gray-300 border-2 hover:text-current rounded-md">Details</button>
                 </Link>
@@ -209,7 +208,5 @@ function CourseCards(props){
     </div>
     )
 }
-
-
 export {Socials};
 export default Home;

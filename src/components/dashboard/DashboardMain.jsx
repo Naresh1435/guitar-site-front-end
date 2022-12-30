@@ -44,7 +44,7 @@ function DashboardDefault(props){
                 <div className="mx-5 text-inherit">
                     <p className=" font-semibold mt-9">You are not currently enrolled in any program</p>
                     <h1 className=" mt-10 mb-10">Take The Next Step In Your Life</h1>
-                    <Link to="/explore"><button className="mb-10 color-con1 text-white px-4 py-2 rounded-md hover:bg-white hover:text-inherit">Explore Courses</button></Link>
+                    <Link to="/react/explore"><button className="mb-10 color-con1 text-white px-4 py-2 rounded-md hover:bg-white hover:text-inherit">Explore Courses</button></Link>
                 </div>
             </div>
         )
