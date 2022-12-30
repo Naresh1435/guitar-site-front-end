@@ -21,7 +21,6 @@ return (
     <ContactCon />
     <Third />
     <Footer/>
-
 </div>
 )}
 
@@ -127,7 +126,9 @@ return(
                     Doloremque error quaerat inventore?</p>
 
                 <div className="mt-6">
-                    <button className="p-4 bg-emerald-400 text-white rounded-md  hover:bg-black ">Contact Us Now</button>
+                    <Link>
+                        <button className="p-4 bg-emerald-400 text-white rounded-md  hover:bg-black ">Contact Us Now</button>
+                    </Link>
                 </div>
             </div>
 
@@ -165,9 +166,13 @@ return(
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos distinctio quod totam quisquam quam
         suscipit explicabo corrupti adipisci.
     </div>
-    <div className="flex justify-center mt-12"> <button
+    <div className="flex justify-center mt-12">
+        <Link to={'/react/explore'}>
+        <button
             className="w-60 bg-emerald-400 text-white p-4 font-black rounded text-xl hover:bg-gray-600 ">View All
-            Courses</button></div>
+            Courses</button>
+        </Link>
+         </div>
     <div className="grid grid-cols-3">
         <CourseCards subscription_plan="Free" course_features="Beginner to Hero" course_title="Guitar Basics" />
         <CourseCards subscription_plan="Free" course_features="Beginner to Hero" course_title="Guitar Basics" />

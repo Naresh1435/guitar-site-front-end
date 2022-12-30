@@ -44,7 +44,7 @@ function Pricing() {
         if(Auth === true){
              if(Role === 'student'){
                 if(e.target.id ==='free'){
-                    window.location.assign('/select-role');
+                    window.location.assign('/react/explore');
                 } else if (e.target.id ==='pro' ){
 
                     window.location.assign('/app/api/payment?plan=plan_KbHl03IPQIEFKv&type=pro&role=student&status=create')
@@ -56,7 +56,7 @@ function Pricing() {
                 alert('User Account type is not eligible for subscription')
             }
         } else {
-            window.location.assign('/select-role');
+            window.location.assign('/react/select-role');
         }
         $('#infinity-spin').addClass('hidden');
         //  /api/payment?plan=plan_KbHl03IPQIEFKv&type=pro&role=student&status=create
