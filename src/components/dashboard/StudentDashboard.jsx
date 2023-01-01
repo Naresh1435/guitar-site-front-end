@@ -11,7 +11,7 @@ import ArchivePage from './ArchivePage';
 function StudentDashboad(props){
     let chatURL;
     if (props?.data?.subscribed_plan !== 'free' && props?.data?.mentor_status){
-        const  mentor_id =String(props?.data?.current_mentor?.mentor._id);
+        const  mentor_id =String(props?.data?.current_mentor?.mentor?._id);
         chatURL = '/app/api/message/student/'+props?.data?._id+'/mentor/'+mentor_id;
     }
     return (
