@@ -51,7 +51,7 @@ function Profile(props) {
                         <span>Status</span>
                     </div>
                     <div className="w-2/3">
-                        <input type="text" value={props.user_data?.status ? 'Active' : 'Inactive'} className={`border-2 border-slate-900 p-2 py-2 rounded-r-lg w-90 focus:outline-none w-100 bg-slate-200 capitalize ${props.user_data?.status? 'text-emerald-400' : 'text-red-400'} `}readOnly/>
+                        <input type="text" value={props?.user_data?.status ? 'Active' : 'Inactive'} className={`border-2 border-slate-900 p-2 py-2 rounded-r-lg w-90 focus:outline-none w-100 bg-slate-200 capitalize ${props.user_data?.status? 'text-emerald-400' : 'text-red-400'} `}readOnly/>
                     </div>
                 </div>
                 <div className="flex ">
