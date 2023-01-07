@@ -15,7 +15,7 @@ function MentorDashboard(props){
     }
     return (
         <div>
-        {props.data.status ?<Routes_Mentor/> : <AccessDenied access={true} />  }
+        {props?.data?.status ?<Routes_Mentor/> : <AccessDenied access={true} />  }
         </div>
         )
 }
