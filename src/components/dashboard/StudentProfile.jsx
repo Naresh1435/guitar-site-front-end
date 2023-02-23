@@ -28,12 +28,15 @@ function StudentProfile (){
        <div className="mt-8">
             <ul className="flex gap-8 justify-left text-slate-800 font-semibold text-lg capitalize ">
                 <li className=""><span className=" hover:text-emerald-400 cursor-pointer" onClick={handlePointer}>profile</span>
-                <NavPointer/>
+                {currentPos ==='Profile' && <NavPointer/>}
+                </li>
+                <li className=""><span className=" hover:text-emerald-400 cursor-pointer" onClick={handlePointer}>Gallery</span>
+                {currentPos ==='Gallery' && <NavPointer/>}
                 </li>
                 
             </ul>
         </div>
-        {ProfileData ?<Profile imgURL = {ProfileData?.img_url} profile_data= {ProfileData}  />:<Loading/>}
+        {ProfileData ? currentPos === 'Profile'?<Profile imgURL = {ProfileData?.img_url} profile_data= {ProfileData} /> : <Gallery profile_data= {ProfileData} /> :<Loading/>}
     </div>
     )
 }
@@ -155,6 +158,12 @@ function Profile(props) {
     )
 }
 
+function Gallery(props) {
+    
+    return (
+        <div></div>
+    )
+}
 
 
 function Courses(props){

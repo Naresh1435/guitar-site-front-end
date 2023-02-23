@@ -8,6 +8,8 @@ import StudentProfile from './StudentProfile';
 import StudentArchives from './StudentArchives';
 import NotAvailable from '../NotAvailable';
 import ArchivePage from './ArchivePage';
+import Tasks from './Tasks';
+import Carousel from './Carousel';
 function StudentDashboad(props){
     let chatURL;
     if (props?.data?.subscribed_plan !== 'free' && props?.data?.mentor_status){
@@ -17,13 +19,14 @@ function StudentDashboad(props){
     return (
         <Routes>
         <Route path='chat' element={(props?.data?.subscribed_plan !=='free' && props?.data?.mentor_status)?<StudentChat role={true} data={props.data} chatURL={chatURL}/>:<AccessDenied access={props.data.subscribed_plan==='free'?false:true}/>} />
-        <Route path='courses' element = {<section><DashboardNav/><DashboardDefault data={props?.data?.enrolled_courses} error={<NotAvailable/>} /></section>}>
-        <Route path=':plan' element={<DashboardDefault data={props?.data?.enrolled_courses}/>} />
+        <Route path='courses' element = {<section> <Carousel/> <DashboardNav/><DashboardDefault data={props?.data?.enrolled_courses} error={<NotAvailable/>} /></section>}>
+        <Route path=':plan' element= { <section > <Carousel/> <DashboardDefault data={props?.data?.enrolled_courses}/> </section>} />
         </Route>
         <Route path='view/:courseID' element={<CoursePage/>}/>
         <Route path='profile' element={<StudentProfile/>} error={<NotAvailable/>} />
         <Route path='archives' element={<StudentArchives/>} />
         <Route path='archives/:archiveID' element={<ArchivePage/>} />
+        <Route path='tasks' element = {props?.data?.subscribed_plan !== 'free' && props?.data.mentor_status ?<Tasks data={props.data} /> : <AccessDenied access={props.data.subscribed_plan==='free'?false:true}/>} />
         </Routes>
     )
 }

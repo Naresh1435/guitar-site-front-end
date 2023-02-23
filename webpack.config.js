@@ -5,10 +5,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 console.log(__dirname);
-
 
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
@@ -19,7 +18,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename : '[name].bundle.js',
-    publicPath :'/react/'
+    publicPath :'/'
   },
   resolve : {
     roots :[path.resolve(__dirname,'src/components',path.resolve(__dirname,'src'))],
@@ -33,7 +32,7 @@ const config = {
     open: true,
     proxy: {
         '/app/api/': {
-          target : 'https://guitar-site-87h3i.ondigitalocean.app',
+          target : "http://localhost:3001",  //'https://guitar-site-87h3i.ondigitalocean.app',
           secure: false, 
           changeOrigin: true,
 
@@ -50,12 +49,10 @@ const config = {
       template: path.join(__dirname,"public/index.html"),
       filename : "index.html",
       inject : 'body',
-      
-        
     }),
     new webpack.ProvidePlugin({
-      process: 'process/browser',
-    }),
+      process: "process/browser"
+  })
     
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -75,6 +72,16 @@ const config = {
             }
             
         ]
+      },
+      {
+        test: /\.m?js/,
+        type: "javascript/auto",
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
+        },
       },
       {
         test: /\.css$/i,

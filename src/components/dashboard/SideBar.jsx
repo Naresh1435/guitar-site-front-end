@@ -33,6 +33,7 @@ function StudentSideBar(){
         <ListElement name='courses'/>
         <ListElement name='chat'/>
         <ListElement name='archives'/>
+        <ListElement name='tasks'/>
         <ListElement name='profile'/>
         </ul>
     )

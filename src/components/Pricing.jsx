@@ -15,7 +15,7 @@ function Pricing() {
         $.getJSON('/app/api/verify',(data,err)=>{
             if(err==='success'){
                 if(data?.role === 'student' && data.auth){
-                    $.getJSON('/api/get/student', (studentData, res)=>{
+                    $.getJSON('/app/api/get/student', (studentData, res)=>{
                         console.log(studentData);
                         if(res === 'success' && studentData.res){
 
