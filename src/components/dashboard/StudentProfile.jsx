@@ -4,10 +4,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import $ from 'jquery';
 import { InfinitySpin } from  'react-loader-spinner'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import guitar from '../../img/guitar2.jpg';
+import MuxPlayerComponent from "../learning/MuxPlayer";
+
 
 function StudentProfile (){
     const [ProfileData,updateProfileData] = useState();
-    const [currentPos, updatePos] = useState("Profile");
+    const [currentPos, updatePos] = useState("Gallery");
     const handlePointer = (e) =>{
         updatePos(e.target.innerText);
     }
@@ -36,7 +40,9 @@ function StudentProfile (){
                 
             </ul>
         </div>
-        {ProfileData ? currentPos === 'Profile'?<Profile imgURL = {ProfileData?.img_url} profile_data= {ProfileData} /> : <Gallery profile_data= {ProfileData} /> :<Loading/>}
+        {ProfileData ? currentPos === 'Profile'?
+        <Profile imgURL = {ProfileData?.img_url} profile_data= {ProfileData} /> : 
+        <Gallery profile_data= {ProfileData} /> :<Loading/>}
     </div>
     )
 }
@@ -161,7 +167,122 @@ function Profile(props) {
 function Gallery(props) {
     
     return (
-        <div></div>
+        <div className="p-5">
+            <div className="galleryoptionsection grid grid-cols-2  gap-5  h-auto   ">
+                <div className="image1 shadow-2xl py-16 border-2 border-gray-300 rounded-xl ">
+                    <div className=" text-center  ">
+                    <FontAwesomeIcon className="w-3/6 h-3/6  " icon="fa-solid fa-file-image" /> 
+                </div>
+                <div className=" text-2xl font-semibold text-center">
+                    <p>Images</p>
+                </div>
+                </div>
+
+                <div className="images2 shadow-2xl py-16 rounded-xl">
+                    <div className=" text-center">
+                    <FontAwesomeIcon className="w-3/6 h-3/6" icon="fa-solid fa-file-video" />
+
+                    </div>
+                    <div className="text-2xl font-semibold text-center ">
+                        <p>Videos</p>
+                    </div>
+                </div>
+            </div>
+            {/* <div className="photosgallery">
+                <div className="photosgallerysection">
+                  <div className="grid grid-cols-4 gap-2">
+                     <div className=" border-2 rounded-md p-2">
+                        <img src={guitar} alt="" />
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                     <div className="border-2 rounded-md p-2">
+                     <img src={guitar} alt="" />
+
+                     </div>
+                  </div>
+                </div>
+            </div> */}
+            {/* <div className="videogallery">
+                <div className="videogallerysection">
+                  <div className="grid grid-cols-3 gap-4">
+                  <div className=" ">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+                 <div className="">
+                <MuxPlayerComponent url="" />
+                 </div>
+
+                  </div>
+                </div>
+            </div> */}
+           
+        </div>
     )
 }
 

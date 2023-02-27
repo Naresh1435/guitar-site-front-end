@@ -26,7 +26,7 @@ function StudentDashboad(props){
         <Route path='profile' element={<StudentProfile/>} error={<NotAvailable/>} />
         <Route path='archives' element={<StudentArchives/>} />
         <Route path='archives/:archiveID' element={<ArchivePage/>} />
-        <Route path='tasks' element = {props?.data?.subscribed_plan !== 'free' && props?.data.mentor_status ?<Tasks data={props.data} /> : <AccessDenied access={props.data.subscribed_plan==='free'?false:true}/>} />
+        <Route path='tasks' element = {props?.data?.subscribed_plan !== 'free' && props?.data?.mentor_status ?<Tasks data={props.data} /> : <AccessDenied access={props.data.subscribed_plan==='free'?false:true}/>} />
         </Routes>
     )
 }
