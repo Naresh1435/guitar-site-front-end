@@ -12,6 +12,7 @@ import best from "../img/best.jpg";
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Footer,Socials} from './Footer';
+import Caroursel from './dashboard/Carousel';
 function Home () {
 return (
 <div className="">
@@ -158,11 +159,11 @@ return(
 function HomeCon2(){
 return(
 <div className="p-5 color-con3">
-    <h1 className=" text-3xl font-black text-center mt-8">Featured Courses</h1>
+    <h1 className=" text-3xl font-black text-center ">Featured Courses</h1>
     <div className="flex justify-center mt-4">
         <div className="h-1 w-44 bg-emerald-400 "></div>
     </div>
-    <div className="text-center font-bold text-xl mt-16 w-1/2 mx-auto">
+    <div className="text-center font-bold text-xl mt-8 w-1/2 mx-auto">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, dignissimos distinctio quod totam quisquam quam
         suscipit explicabo corrupti adipisci.
     </div>
@@ -173,12 +174,37 @@ return(
             Courses</button>
         </Link>
          </div>
-    <div className="grid grid-cols-3">
-        <CourseCards subscription_plan="Free" course_features="Beginner to Hero" course_title="Guitar Basics" />
-        <CourseCards subscription_plan="Free" course_features="Beginner to Hero" course_title="Guitar Basics" />
-        <CourseCards subscription_plan="Free" course_features="Beginner to Hero" course_title="Guitar Basics" />
-
+         <div id="carouselExampleIndicators" class="carousel mx-auto h-80 items-center text-center w-full justify-center slide" data-ride="carousel">
+  <ol className=" carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div className="carousel-inner items-center">
+    <div className="carousel-item active">
+    <CourseCards subscription_plan="free" course_title="First Course"/>
+      
     </div>
+    <div className="carousel-item">
+        <CourseCards subscription_plan="free" course_title="First Course"/>
+      <div className='carousel-caption text-black d-none d-md-block'>
+            
+        </div>
+    </div>
+    <div className="carousel-item">
+      <img className="d-block w-100" src="..." alt="Third slide"/>
+    </div>
+  </div>
+  <a class="carousel-control-prev text-black hover:text-emerald-400" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <FontAwesomeIcon className="text-3xl font-bold" icon={"angle-left"} />
+    <span className="sr-only">Previous</span>
+  </a>
+  <a className="carousel-control-next text-black hover:text-emerald-400" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <FontAwesomeIcon className="text-3xl font-bold" icon={"angle-right"} />
+    <span className="sr-only">Next</span>
+  </a>
+</div>
+    
 
 </div>
 
@@ -187,12 +213,12 @@ return(
 
 function CourseCards(props){
     return (
-    <div className="box mx-4 shadow-md bg-white relative my-4 rounded-md hover:scale-105" key={props._id}>
-        <span className=" h-full absolute w-1 bg-emerald-400"></span>
-        <div className="mx-4 mt-2">
+    <div className="box shadow-md bg-white relative p-2 rounded-md hover:scale-105" key={props._id}>
+        <span className=" h-full absolute left-0 w-1 bg-emerald-400"></span>
+        <div className="mx-6 mt-2">
             <h1 className="capitalize">{props.subscription_plan}</h1>
-            <div className="h-4/5 w-100 my-2">
-                <img src={``} className="h-4/5 w-100" alt="card img" />
+            <div className=" w-full my-2">
+                <img src={``} className="h-40 w-full" alt="card img" />
             </div>
             <hr className=" my-1 mx-5" align="center" />
             <div className="my-2">
@@ -200,11 +226,7 @@ function CourseCards(props){
                 <p className="text-sm font-light capitalize  ">{props.course_features}</p>
             </div>
             <div className="flex flex-row mb-2">
-                <Link className="flex-1 mx-1" to={''} >
-                <button
-                    className="w-100 p-2 btn-dark font-semibold hover:bg-white hover:border-gray-300 border-2 hover:text-current rounded-md">Details</button>
-                </Link>
-                <div className="flex-1 mx-1 text-white">
+                <div className="flex-1 mx-auto  text-white">
                     <button id={props._id}
                         className="w-100 p-2 bg-emerald-400   hover:border-emerald-400 border-2 hover:bg-white font-semibold rounded-md hover:text-emerald-400" >Enroll</button>
                 </div>

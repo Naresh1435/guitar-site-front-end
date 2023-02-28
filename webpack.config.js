@@ -32,7 +32,7 @@ const config = {
     open: true,
     proxy: {
         '/app/api/': {
-          target : "http://localhost:3001",  //'https://guitar-site-87h3i.ondigitalocean.app',
+          target : 'https://guitar-site-87h3i.ondigitalocean.app',
           secure: false, 
           changeOrigin: true,
 

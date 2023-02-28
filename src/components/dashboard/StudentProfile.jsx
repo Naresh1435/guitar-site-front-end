@@ -11,9 +11,11 @@ import MuxPlayerComponent from "../learning/MuxPlayer";
 
 function StudentProfile (){
     const [ProfileData,updateProfileData] = useState();
-    const [currentPos, updatePos] = useState("Gallery");
+    const [currentPos, updatePos] = useState("Profile");
+    const [gallery_selection, updateGallerySelection] = useState('Home');
     const handlePointer = (e) =>{
         updatePos(e.target.innerText);
+        updateGallerySelection('Home');
     }
     useEffect(()=>{
         $.get('/app/api/user/profile?role=student',(data,err)=>{
@@ -42,7 +44,7 @@ function StudentProfile (){
         </div>
         {ProfileData ? currentPos === 'Profile'?
         <Profile imgURL = {ProfileData?.img_url} profile_data= {ProfileData} /> : 
-        <Gallery profile_data= {ProfileData} /> :<Loading/>}
+        <Gallery profile_data= {ProfileData} gallery_pointer={gallery_selection} updateGalleryPointer={updateGallerySelection}/> :<Loading/>}
     </div>
     )
 }
@@ -165,11 +167,16 @@ function Profile(props) {
 }
 
 function Gallery(props) {
-    
-    return (
-        <div className="p-5">
+    const Home = ()=>{
+        const updateGalleryPointerImages = ()=>{
+            props.updateGalleryPointer('Image');
+        }
+        const updateGalleryPointerVideo = ()=>{
+            props.updateGalleryPointer('Video');
+        }
+        return (
             <div className="galleryoptionsection grid grid-cols-2  gap-5  h-auto   ">
-                <div className="image1 shadow-2xl py-16 border-2 border-gray-300 rounded-xl ">
+                <div className="image1 shadow-2xl py-16 border-2 border-gray-300 cursor-pointer hover:scale-90 rounded-xl " onClick={updateGalleryPointerImages}>
                     <div className=" text-center  ">
                     <FontAwesomeIcon className="w-3/6 h-3/6  " icon="fa-solid fa-file-image" /> 
                 </div>
@@ -178,113 +185,72 @@ function Gallery(props) {
                 </div>
                 </div>
 
-                <div className="images2 shadow-2xl py-16 rounded-xl">
+                <div className="images2 shadow-2xl py-16 border-gray-300 border-2 cursor-pointer hover:scale-90  rounded-xl" onClick={updateGalleryPointerVideo}>
                     <div className=" text-center">
                     <FontAwesomeIcon className="w-3/6 h-3/6" icon="fa-solid fa-file-video" />
-
                     </div>
                     <div className="text-2xl font-semibold text-center ">
                         <p>Videos</p>
                     </div>
                 </div>
             </div>
-            {/* <div className="photosgallery">
+        )
+    } 
+    const GalleryVideo = ()=>{
+        const VideoComponent = (video) => {
+            return (
+                <div>
+                    <MuxPlayerComponent url={video.file_video}/>
+                </div>
+            )
+        }
+        return (
+                     <div className="videogallery">
+                            <div className="videogallerysection">
+                              <div className="grid grid-cols-3 gap-4">
+                                {props.profile_data.user_data.gallery.filter(file=>file.file_type === 'video').map(VideoComponent)}
+                                {props.profile_data.user_data.group_status && props.profile_data.user_data.group.gallery.filter((file)=>file.file_type === 'video').map(VideoComponent) }
+                              </div>
+                            </div>
+                        </div> 
+        )
+    }
+
+    const GalleryImages = ()=>{
+        const GImage =(img)=>{
+            return(
+                <div className="border-2 rounded-md p-2">
+                    <img src={`data:image/*;base64,${Buffer.from(img.file_buffer).toString('base64')}`} />
+                    
+                     </div>
+            )
+        }
+        console.log(props.profile_data);
+        return (
+            <div className="photosgallery">
                 <div className="photosgallerysection">
                   <div className="grid grid-cols-4 gap-2">
-                     <div className=" border-2 rounded-md p-2">
-                        <img src={guitar} alt="" />
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
-                     <div className="border-2 rounded-md p-2">
-                     <img src={guitar} alt="" />
-
-                     </div>
+                    
+                    {props.profile_data.user_data.gallery.filter((file)=>file.file_type === 'image').map(GImage)}
+                    {props.profile_data.user_data.group_status && props.profile_data.user_data.group.gallery.filter((file)=>file.file_type === 'image').map(GImage) }
                   </div>
                 </div>
-            </div> */}
-            {/* <div className="videogallery">
-                <div className="videogallerysection">
-                  <div className="grid grid-cols-3 gap-4">
-                  <div className=" ">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
-                 <div className="">
-                <MuxPlayerComponent url="" />
-                 </div>
+            </div>
+        )
+    }
 
-                  </div>
-                </div>
-            </div> */}
+    return (
+        <div className="p-5">
+            
+           {props.gallery_pointer === "Home"?<Home/>
+           :props.gallery_pointer==="Image"?<GalleryImages/>
+           :<GalleryVideo/>} 
            
         </div>
     )
 }
+
+
 
 
 function Courses(props){

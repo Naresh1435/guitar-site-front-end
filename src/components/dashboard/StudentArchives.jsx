@@ -41,7 +41,6 @@ function StudentArchives(){
                         </button>
                     </Link>
                 </div>
-                
             </div>
         )
     }
