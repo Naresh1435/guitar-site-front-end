@@ -31,7 +31,7 @@ function Tasks(props) {
                             });
                         
                             upload.on('progress', progress => {
-                                setMessage(progress.detail);
+                                setMessage(parseInt(progress.detail));
                             });
                             upload.on('success', () => {
                                 window.location.reload();
