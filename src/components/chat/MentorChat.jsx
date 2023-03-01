@@ -160,7 +160,7 @@ function MentorChat(props){
                     <hr />
                     <p className="rounded-md  text-sm capitalize">{task_data?.task_description }</p>
                     { task_data.task_status === "submitted"?  
-                        task_data.task_type === "image"? <img src={`data:${task_data?.task_content_type};base64,${Buffer.from(task_data?.task_img).toString('base64')}`}  className="h-40" alt="card img" />
+                        task_data.task_type === "image"? <img src={`data:${'image/*'};base64,${Buffer.from(task_data?.task_image).toString('base64')}`}  className="h-40" alt="card img" />
                          :   <MuxPlayerComponent url={task_data?.upload?.mux_playback_id} />
                          :null
                     }

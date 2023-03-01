@@ -15,7 +15,7 @@ function Tasks(props) {
             form.preventDefault();
             setMessage("...");
             if(task_data.task_type === "video") {
-                $.post('/app/api/task/upload',{task_id : task_data._id, type : task_data.task_type},(data,err)=>{
+                $.post('/app/api/task/upload?type=video',{task_id : task_data._id, type : task_data.task_type},(data,err)=>{
                     console.log(data,err);
                     if (err === "success" && data.res ) {
                         try {
@@ -44,10 +44,30 @@ function Tasks(props) {
                     }
                     
                 });
-            } else if (form.target.task_type === "image") {
+            } else if (task_data.task_type === "image") {
                 const img = form.target.file.files[0];
-                $.post('/app/api/task/upload',{task_id : task_data._id, task_type : task_data.task_type, file : img },(data,err)=>{
-                    console.log(data,err);
+                const data = new FormData();
+                data.append('img',img);
+                data.append('task_id',task_data._id);
+                $.ajax({
+                    url : '/app/api/task/upload?type=image',
+                    data : data,
+                    type : 'POST',
+                    enctype : 'multipart/form-data',
+                    processData : false,
+                    contentType : false,
+                    cache : false,
+                    success : (res) =>{
+                        if(res.res){
+                            setMessage("Submitted");
+                            window.location.reload();
+                        } else {
+                            alert("Something went wrong");
+                        }
+                    },
+                    error : (e)=>{
+                        alert("Somthing Went wrong!")
+                    },
                 });
             }
         }
