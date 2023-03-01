@@ -200,7 +200,7 @@ function Gallery(props) {
         const VideoComponent = (video) => {
             return (
                 <div>
-                    <MuxPlayerComponent url={video.file_video}/>
+                    <MuxPlayerComponent url={video.file_video.mux_playback_id}/>
                 </div>
             )
         }
